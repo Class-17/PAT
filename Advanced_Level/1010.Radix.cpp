@@ -25,8 +25,9 @@ ll binarySearch(string n, ll lo, ll hi, ll obj) {
     return -1;
 }
 
-int main()
-{
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     string s1, s2;
     ll tag, radix;
     cin >> s1 >> s2 >> tag >> radix;
