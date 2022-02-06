@@ -1,38 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct node {
-    int val; 
-    vector<int> seq;
-};
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int n, m, s;
     cin >> n >> m >> s;
-    vector<node> tree(n);
+    vector<pair<int, vector<int>>> tree(n);
     for (auto &[x, _] : tree) cin >> x;
     for (int i = 0; i < m; ++i) {
         int id, k;
         cin >> id >> k;
-        tree[id].seq.resize(k);
-        for (int j = 0; j < k; ++j)
-            cin >> tree[id].seq[j];
+        tree[id].second.resize(k);
+        for (auto &x : tree[id].second) cin >> x;
     }
     vector<vector<int>> res; 
     vector<int> seq;
     int sum = 0;
     auto dfs = [&](auto &dfs, int t, vector<int>& seq) {
         if (sum > s) return;
-        seq.push_back(tree[t].val);
-        sum += tree[t].val;
-        if (tree[t].seq.empty()) {
-            if (sum == s) res.push_back(seq);
-        }
-        for (auto &x : tree[t].seq)
+        seq.push_back(tree[t].first);
+        sum += tree[t].first;
+        if (tree[t].second.empty() && sum == s)
+            res.push_back(seq);
+        for (auto &x : tree[t].second)
             dfs(dfs, x, seq);
-        sum -= tree[t].val;
+        sum -= tree[t].first;
         seq.pop_back();
     };
     dfs(dfs, 0, seq);

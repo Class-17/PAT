@@ -4,13 +4,14 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int n, m; cin >> n >> m;
+    int n, m;
+    cin >> n >> m;
     vector<int> w(n);
-    for (auto & x : w) cin >> x;
-   	deque<int> seq;
+    for (auto &x : w) cin >> x;
+   	queue<int> seq;
     for (int i = 0; i < n; ++i) {
         int num; cin >> num;
-        seq.push_back(num);
+        seq.push(num);
     }
     vector<int> ranks(n);
     auto game = [&]()->void {
@@ -21,10 +22,10 @@ int main() {
                 auto x = seq.front();
                 ranks[x] = group + 1;
                 if (w[x] > w[winner]) winner = x;
-                seq.pop_front();
+                seq.pop();
                 len--;
             }
-            seq.push_back(winner);
+            seq.push(winner);
         }
     };
     while (size(seq) > 1) game();

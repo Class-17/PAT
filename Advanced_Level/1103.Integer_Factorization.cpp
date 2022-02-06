@@ -26,7 +26,7 @@ int main() {
     };
     dfs(dfs, pow(n - k + 1, 1.0 / p), 0);
     if (facs.empty())
-        cout << "Impossible" << endl;
+        cout << "Impossible" << '\n';
     else {
         cout << n << " = ";
         for (int i = 0; i < k; ++i)
