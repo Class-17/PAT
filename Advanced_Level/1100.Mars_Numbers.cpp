@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main()
-{
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);  
     unordered_map<string, int> digit = {{"tret", 0}, {"jan", 1}, {"feb", 2}, {"mar", 3}, {"apr", 4}, 
                                         {"may", 5}, {"jun", 6}, {"jly", 7}, {"aug", 8}, 
                                         {"sep", 9}, {"oct", 10}, {"nov", 11}, {"dec", 12}};
@@ -11,9 +13,7 @@ int main()
     vector<string> mars_digit = {"tret", "jan", "feb", "mar", "apr", "may", "jun", 
                                  "jly", "aug", "sep", "oct", "nov", "dec"};
     vector<string> mars_higher_digit = {"tret", "tam", "hel", "maa", "huh", "tou", "kes", 
-                                        "hei", "elo", "syy", "lok", "mer", "jou"};         
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);               
+                                        "hei", "elo", "syy", "lok", "mer", "jou"};                  
     int n; (cin >> n).get(); 
     while (n--) {
         string s; getline(cin, s);
@@ -24,7 +24,7 @@ int main()
             if (num / 13 > 0 && num % 13 > 0) cout << " ";
             if (num % 13 != 0 || num == 0)
                 cout << mars_digit[num % 13];
-            cout << endl;
+            cout << '\n';
         }
         else {
             int num = 0;
@@ -32,10 +32,10 @@ int main()
             if (higher_digit.find(val) != higher_digit.end())
                 num += higher_digit[val] * 13;
             if (num > 0) 
-                val = s.size() > 3 ? s.substr(4, 3) : " ";
+                val = size(s) > 3 ? s.substr(4, 3) : " ";
             if (digit.find(val) != digit.end())
                 num += digit[val];
-            cout << num << endl;
+            cout << num << '\n';
         }
     }
     return 0;

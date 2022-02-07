@@ -3,7 +3,7 @@ using namespace std;
 
 string chop(string num, int n) {
     int exp = 0;
-    while(num.size() > 0 && *begin(num) == '0')
+    while (num.size() > 0 && *begin(num) == '0')
         num.erase(begin(num));
     if (num.size() > 0 && *begin(num) != '.') {
         for (int i = 0; i < num.size(); ++i) {
@@ -26,8 +26,7 @@ string chop(string num, int n) {
     return "0." + num + "*10^" + to_string(exp);
 }
 
-int main()
-{
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int n;
@@ -35,7 +34,7 @@ int main()
     cin >> n >> a >> b;
     a = chop(a, n);
     b = chop(b, n);
-    if (a == b)      cout << "YES " << a << endl;
-    else  cout << "NO " << a << " " << b << endl;
+    if (a == b)      cout << "YES " << a << '\n';
+    else  cout << "NO " << a << " " << b << '\n';
     return 0;
 }

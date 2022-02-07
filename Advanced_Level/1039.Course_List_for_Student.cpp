@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
-using namespace std;;
-int main()
-{
+using namespace std;
+
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int n, k; 
     cin >> n >> k;
-    unordered_map<string, set<int>> info;
+    map<string, set<int>> info;
     for (int i = 0; i < k; ++i) {
         int course_id, student_num;
         cin >> course_id >> student_num;
@@ -17,10 +17,10 @@ int main()
     }
     for (int i = 0; i < n; ++i) {
         string name; cin >> name;
-        cout << name << " " << info[name].size();
-        for (auto & id : info[name])
+        cout << name << " " << size(info[name]);
+        for (auto &id : info[name])
             cout << " " << id;
-        cout << endl;
+        cout << '\n';
     }
     return 0;
 }

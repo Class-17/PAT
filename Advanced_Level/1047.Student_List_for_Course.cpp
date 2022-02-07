@@ -1,27 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main()
-{
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     int n, k;
-    scanf("%d %d", &n, &k);
+    cin >> n >> k;
     vector<vector<int>> courses(k);
-    vector<char*> name_id(n);
+    vector<string> name_id(n);
     for (int i = 0; i < n; ++i) {
         int course_num;
-        name_id[i] = new char(5);
-        scanf("%s %d", name_id[i], &course_num);
+        cin >> name_id[i] >> course_num;
         while (course_num--) {
             int course; cin >> course;
             courses[course - 1].push_back(i);
         }
     }
     for (int i = 0; i < k; ++i) {
-        printf("%d %d\n", i + 1, courses[i].size());
+        cout << i + 1 << ' ' << size(courses[i]) << '\n';
         sort(begin(courses[i]), end(courses[i]), [&](auto a, auto b) {
-            return strcmp(name_id[a], name_id[b]) < 0;
-        });
-        for (auto & name : courses[i])
-            printf("%s\n", name_id[name]);
+            return name_id[a] < name_id[b];});
+        for (auto &name : courses[i])
+            cout << name_id[name] << '\n';
     }
     return 0;
 }
