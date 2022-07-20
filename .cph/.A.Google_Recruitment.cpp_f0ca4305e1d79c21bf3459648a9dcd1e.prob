@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"/mnt/e/ACM-ICPC/PAT/A.Google_Recruitment.cpp","tests":[{"id":1657093547707,"input":"20 5\n23654987725541023819\n","output":"49877\n"},{"id":1657093551919,"input":"10 3\n2468024680","output":"404"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/mnt/e/ACM-ICPC/PAT/A.Google_Recruitment.cpp","group":"local","local":true}
