@@ -1,1 +1,0 @@
-{"name":"Local: B","url":"/mnt/e/ACM-ICPC/PAT/B.Palindromic_Number.cpp","tests":[{"id":1658759639504,"input":"67 3\n","output":"484\n2\n"},{"id":1658759646430,"input":"69 3","output":"1353\n3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/mnt/e/ACM-ICPC/PAT/B.Palindromic_Number.cpp","group":"local","local":true}
