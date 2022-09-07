@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"/mnt/e/ACM-ICPC/PAT/test.cpp","tests":[{"id":1661856657746,"input":"4 5\nO#OOO\nOOXOO\nOO##O\nOOO#O","output":"0011300121133"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/mnt/e/ACM-ICPC/PAT/test.cpp","group":"local","local":true}
